@@ -1,11 +1,29 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const PokemonCArd = ({pokemonName}) => {
+const PokemonCard = ({pokemonUrl}) => {
+
+    const [pokemon, setPokemon] = useState({});
+    const navigate = useNavigate();
+
+
+    useEffect(() => {
+        axios.get(pokemonUrl)
+            .then(res => setPokemon(res.data))
+    },[pokemonUrl])
+
+
     return (
-        <div>
-            {pokemonName}
+        <div className="col-sm-6 col-md-4 col-lg-3 p-3">
+        <div className="card h-100" onClick={() => navigate(`/pokemondetail/${pokemon.id}`)}>
+            <div className="card-body">
+                <h3>{pokemon.name}</h3>
+                <img src={pokemon.sprites?.other.dream_world.front_default} alt="" className='w-100' />
+            </div>
+        </div>
         </div>
     );
 };
 
-export default PokemonCArd;
+export default PokemonCard;

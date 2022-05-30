@@ -8,7 +8,7 @@ import PokemonInput from './components/PokemonInput';
 function App() {
   return (
     <HashRouter>
-    <div className="App">
+    <div className="container mt-5">
   
     </div>
     <Routes>
