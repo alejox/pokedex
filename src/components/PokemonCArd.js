@@ -17,7 +17,7 @@ const PokemonCard = ({pokemonUrl}) => {
     return (
         <div className="col-sm-6 col-md-4 col-lg-3 p-3">
         <div className="card h-100" onClick={() => navigate(`/pokemondetail/${pokemon.id}`)}>
-            <div className="card-body">
+            <div className="card-body bg-info">
                 <h3>{pokemon.name}</h3>
                 <img src={pokemon.sprites?.other.dream_world.front_default} alt="" className='w-100' />
             </div>

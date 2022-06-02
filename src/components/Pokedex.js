@@ -33,7 +33,6 @@ const Pokedex = () => {
             .then(res => setPokemons(res.data.pokemon));
     };
 
-    console.log(pokemons);
 
     return (
         <>
