@@ -18,10 +18,9 @@ const Pokedex = () => {
         .then(res => setPokemons(res.data.results));
 
         axios.get(`https://pokeapi.co/api/v2/type/`)
-        .then(res => setType(res.data.results))
-    }, []);
+        .then(res => setType(res.data.results));
+    }, [pokemons]);
 
-    console.log(types);
 
     const search = ()=> {
         console.log(pokemonSearch);
