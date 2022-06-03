@@ -13,7 +13,7 @@ const PokemonCard = ({pokemonUrl}) => {
             .then(res => setPokemon(res.data))
     },[pokemonUrl])
 
-
+df
     return (
         <div className="col-sm-6 col-md-4 col-lg-3 p-3">
         <div className="card h-100" onClick={() => navigate(`/pokemondetail/${pokemon.id}`)}>
