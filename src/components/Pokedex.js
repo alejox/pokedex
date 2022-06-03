@@ -23,7 +23,6 @@ const Pokedex = () => {
 
 
     const search = ()=> {
-        console.log(pokemonSearch);
         navigate(`/pokedex/${pokemonSearch}`);
     };
 
@@ -44,8 +43,7 @@ const Pokedex = () => {
                     types.map(type => (
                         
                         <option 
-                        key={type.name} 
-                        className={'text-black'}
+                        key={type.name}
                         value={type.url}>{type.name}</option>
                     ))
                 }

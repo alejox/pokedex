@@ -15,12 +15,17 @@ const PokemonDetail = () => {
     console.log(pokemon);
 
     return (
-        <div>
-            <h2>Pokemon Detail</h2>
-            <p>Accediendo al personaje con id: <b>{id}</b> </p>
-            <h2>{pokemon.name}</h2>
-            <img src={pokemon.sprites?.other['official-artwork'].front_default} alt="" 
-            className='w-100' />
+        <div className="container px-5 pt-5 text-center vh-100 bg-dark text-white">
+            <h2 className='text-capitalize'>{pokemon.name}</h2>
+            <h2># <b>{id}</b> </h2>
+            <img src={pokemon.sprites?.other['official-artwork'].front_default} alt="" className='w-100' />
+            <p><b>Type: </b></p>
+            <p><b>Weight: </b>{pokemon.weight}</p>
+            <h2>Abilities</h2>
+            <p>Hp: </p>
+            <p>Speed: </p>
+            <p>Attack: </p>
+            <p>Defense: </p>
         </div>
     );
 };

@@ -6,6 +6,7 @@ const PokemonCard = ({pokemonUrl}) => {
 
     const [pokemon, setPokemon] = useState({});
     const navigate = useNavigate();
+    console.log(pokemon);
 
 
     useEffect(() => {
