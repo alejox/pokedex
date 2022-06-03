@@ -19,7 +19,7 @@ const Pokedex = () => {
 
         axios.get(`https://pokeapi.co/api/v2/type/`)
         .then(res => setType(res.data.results));
-    }, [pokemons]);
+    }, []);
 
 
     const search = ()=> {
@@ -34,16 +34,18 @@ const Pokedex = () => {
 
 
     return (
-        <>
-            <h2>Pokedex</h2>
-            <p>Bienvenido {pokemon}!</p>
-            <select onChange={filterPokemons}>
+        <div className={'bg-dark text-center pt-5'}>
+            <h2 className='text-white'>Pokedex</h2>
+            <p className='text-white'>Bienvenido {pokemon}!</p>
+            <label className='text-white' htmlFor="select">Type:</label>
+            <select id='select' onChange={filterPokemons} className='m-3'>
                 <option></option>
                 {
                     types.map(type => (
                         
                         <option 
                         key={type.name} 
+                        className={'text-black'}
                         value={type.url}>{type.name}</option>
                     ))
                 }
@@ -69,7 +71,7 @@ const Pokedex = () => {
                 ))
             }
         </div>
-        </>
+        </div>
     );
 };
 
